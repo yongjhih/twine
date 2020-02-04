@@ -30,7 +30,7 @@ module Twine
       end
 
       def set_translation_for_key(key, lang, value)
-        value = value.gsub("\n", "\\n")
+        value = value.to_s.gsub("\n", "\\n")
 
         if @twine_file.definitions_by_key.include?(key)
           definition = @twine_file.definitions_by_key[key]
